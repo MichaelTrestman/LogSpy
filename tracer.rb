@@ -49,13 +49,6 @@ class MethodSpyPlacer
 	def start_and_end_methods
 
 		{
-			# apples: {
-			# 	regex: /apples/,
-			# 	replacement: Proc.new do |match|
-			# 		"bananas#{match}mangoes"
-
-			# 	end
-			# },
 			method_start: {
 				regex: /def\s+\w+.*$/,
 				replacement: Proc.new do |matches|
@@ -87,13 +80,3 @@ end
 p MethodSpyPlacer.new.scan_for_method_definitions_and_insert_spies 'something.rb'
 
 
-
-# trace_report = FinalReport.new
-
-# target_files
-# 	.map { |file| SourceFile.new file }
-# 	.tap do |source_file| 
-# 		scanner.scan_for_method_definitions_and_insert_spies source_file
-# 	end
-
-# trace_report.dump_yaml trace_destination
